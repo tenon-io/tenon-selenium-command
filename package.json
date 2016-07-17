@@ -1,0 +1,32 @@
+{
+  "name": "tenon-selenium-command",
+  "version": "0.0.1",
+  "description": "A Selenium command to submit part of a page to Tenon.io",
+  "keywords": [
+    "selenium"
+  ],
+  "homepage": "https://github.com/tenon-io/tenon-selenium-command",
+  "bugs": "https://tenon1.atlassian.net",
+  "author": {
+    "name": "Karl Groves",
+    "email": "karl@tenon.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tenon-io/tenon-selenium-command.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jsonlint": "^1.1.0",
+    "jshint-stylish": "^2.2.0",
+    "load-grunt-tasks": "^3.5.0",
+    "time-grunt": "^1.3.0"
+  }
+}
