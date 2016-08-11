@@ -1,29 +1,32 @@
-Selenium.prototype.tenonTest = function(locator) {
-    /**
-     * Sets the value of an input field to a random email id,
-     * as though you typed it in.
-     *
-     * @param locator an <a href="#locators">element locator</a>
-     */
+'use strict';
 
-    // All locator-strategies are automatically handled by "findElement"
-    var element = this.page().findElement(locator);
+var config = {
+  key: '7ac2c9adc71ac32d7c773e25e969e7b7',
+  projectID: 'replaceme',
+  endpoint: 'https://tenon.io/api/',
+};
 
-	//stringify the DOM node
-
-
-	var http = new XMLHttpRequest();
-	var url = 'get.php';
-	var params = 'lorem=ipsum&name=binny';
-	http.open('POST', url, true);
-
-	//Send the proper header information along with the request
-	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-	http.onreadystatechange = function() {//Call a function when the state changes.
-	    if(http.readyState === 4 && http.status === 200) {
-	        alert(http.responseText);
-	    }
-	};
-	http.send(params);
+Selenium.prototype.getTenonIssues = function(locator) {
+  var element = this.page().findElement(locator);
+  var src = element.outerHTML;
+  var xhttp = new XMLHttpRequest();
+  var url = config.endpoint;
+  var params = ('key=' + encodeURIComponent(config.key) +
+                '&src=' + encodeURIComponent(src) +
+                '&projectID=' + encodeURIComponent(config.projectID));
+  // alert('sending params' + params);
+  var result = -1;
+  xhttp.onreadystatechange = function() {
+    console.log(xhttp.status, xhttp);
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      var resp = JSON.parse(xhttp.responseText);
+      var issues = resp.resultSummary.issues.totalIssues;
+      // alert('got issues: ' + issues);
+      result = issues;
+    }
+  };
+  xhttp.open('POST', url, false);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhttp.send(params);
+  return result;
 };
