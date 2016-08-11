@@ -1,8 +1,8 @@
 'use strict';
 
 var config = {
-  key: '7ac2c9adc71ac32d7c773e25e969e7b7',
-  projectID: 'replaceme',
+  key: 'PUT YOUR API KEY HERE',
+  projectID: 'PUT YOUR PROJECT ID HERE',
   endpoint: 'https://tenon.io/api/',
 };
 

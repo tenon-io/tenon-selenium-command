@@ -6,7 +6,7 @@
     "selenium"
   ],
   "homepage": "https://github.com/tenon-io/tenon-selenium-command",
-  "bugs": "https://tenon1.atlassian.net",
+  "bugs": "https://github.com/tenon-io/tenon-selenium-command/issues",
   "author": {
     "name": "Karl Groves",
     "email": "karl@tenon.io"
