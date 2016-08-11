@@ -6,7 +6,7 @@ var config = {
   endpoint: 'https://tenon.io/api/',
 };
 
-Selenium.prototype.getTenonIssues = function(locator) {
+Selenium.prototype.getAccessibilityIssues = function(locator) {
   var element = this.page().findElement(locator);
   var src = element.outerHTML;
   var xhttp = new XMLHttpRequest();
