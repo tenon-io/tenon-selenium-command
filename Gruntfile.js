@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     },
     jsonlint: {
         configFiles: {
-            src: ['bower.json', 'package.json', '.bowerrc', '.jshintrc']
+            src: ['package.json', '.jshintrc']
         }
     },
 
