@@ -3,7 +3,7 @@
 var config = {
   key: 'PUT YOUR API KEY HERE',
   projectID: 'PUT YOUR PROJECT ID HERE',
-  endpoint: 'https://tenon.io/api/',
+  endpoint: 'https://tenon.io/api/index.php',
 };
 
 Selenium.prototype.getAccessibilityIssues = function(locator) {

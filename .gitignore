@@ -31,8 +31,6 @@ tramp
 .project
 *.diff
 *.patch
-node_modules
-bower_components
 temp
 .tmp
 dist
